@@ -29,7 +29,7 @@ def merge_k_lists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         else:
             tail.next = curr_min_node
             tail = tail.next
-            lists[min_node_idx] = curr_min_node.next
+        lists[min_node_idx] = curr_min_node.next
 
     return root
 
