@@ -16,7 +16,8 @@ def merge_k_lists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         min_node_idx = -1
         for idx in range(len(lists)):
             curr_node = lists[idx]
-            if curr_node is not None and curr_node.val < curr_min_node.val:
+            if curr_node is not None and (curr_min_node is None or
+                                          curr_node.val < curr_min_node.val):
                 curr_min_node = curr_node
                 min_node_idx = idx
 
