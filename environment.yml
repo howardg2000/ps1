@@ -1,0 +1,6 @@
+name: cs197ps1
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+prefix: /Users/hjguo/opt/anaconda3/envs/cs197ps1
