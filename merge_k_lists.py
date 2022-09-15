@@ -55,6 +55,12 @@ def transform_linked_list_to_array(head):
 
 
 def test_merge_k_lists():
+    """Test on test case [[1, 4, 5], [1, 3, 4], [2, 6]]
+    Output: [1, 1, 2, 3, 4, 4, 5, 6]
+    
+    Explanation:
+    Simple sorting of the concatenated list
+    """
     arrays = [[1, 4, 5], [1, 3, 4], [2, 6]]
     linked_lists = [transform_array_to_linked_list(array) for array in arrays]
     result = merge_k_lists(linked_lists)
