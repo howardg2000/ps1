@@ -9,32 +9,40 @@ class ListNode:
 
 
 def merge_k_lists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    # The first node of the resulting list
     root = None
+    # The last node of the current list
     tail = None
     while True:
         curr_min_node = None
         min_node_idx = -1
         for idx in range(len(lists)):
             curr_node = lists[idx]
+            # Determine if this is the node with the lowest value so far
             if curr_node is not None and (curr_min_node is None or
                                           curr_node.val < curr_min_node.val):
                 curr_min_node = curr_node
                 min_node_idx = idx
 
+        # No more nodes to add
         if curr_min_node is None:
             break
         if root is None:
+            # Initialize head of list
             root = curr_min_node
             tail = root
         else:
+            # Add to tail of list
             tail.next = curr_min_node
             tail = tail.next
+        # Update the head the relevant list so we start at the next item of the linked list
         lists[min_node_idx] = curr_min_node.next
 
     return root
 
 
 def transform_array_to_linked_list(array):
+    """Transform a python array of ints to a linked list."""
     if array:
         head = ListNode(array[0])
         tail = head
@@ -47,6 +55,7 @@ def transform_array_to_linked_list(array):
 
 
 def transform_linked_list_to_array(head):
+    """Transform a linked list into a python array of ints."""
     result = []
     while head is not None:
         result.append(head.val)
